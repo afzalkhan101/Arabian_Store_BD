@@ -1,1 +1,1 @@
-from . import add_to_cart_lead
+from . import res_partner

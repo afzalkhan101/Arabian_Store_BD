@@ -14,17 +14,12 @@ This module extends Odoo CRM with custom features for Bdcalling IT, including:
     "author": "Bdcalling IT",
     "website": "https://www.bdcalling.com",
     "license": "LGPL-3",
-    "depends": [
-        "sale",
-        "crm",
-        "website",
-        "website_sale"
-    ],
+    "depends": ['base', 'crm'],
     "data": [
         "security/ir.model.access.csv",
-        "views/templates.xml"
+        'views/res_partner.xml',
     ],
     "installable": True,
     "application": False,
-    "auto_install": False
+    "auto_install": False,
 }

@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+
+    <record id="res_partner_form_view_inherit_is_employee" model="ir.ui.view">
+        <field name="name">res.partner.form.view.inherit.is.employee</field>
+        <field name="model">res.partner</field>
+
+        <field name="inherit_id" ref="base.view_partner_form"/>
+
+        <field name="arch" type="xml">
+
+         
+            <xpath expr="//field[@name='category_id']" position="after">
+                <field name="is_employee" string="Is Employee"/>
+            </xpath>
+
+        </field>
+    </record>
+
+    <record id="crm_lead_form_inherit_employee" model="ir.ui.view">
+        <field name="name">crm.lead.form.inherit.employee</field>
+        <field name="model">crm.lead</field>
+        <field name="inherit_id" ref="crm.crm_lead_view_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='tag_ids']" position="after">
+                <field name="employee_name"/>
+                <field name='serial_number'/>
+            </xpath>
+
+        </field>
+    </record>
+
+      <template id="custom_signup_phone" inherit_id="auth_signup.signup">
+        <xpath expr="//div[input[@name='login']]" position="after">
+            <div class="form-group">
+                <label for="signup_phone">Phone Number</label>
+                <input type="text" name="phone" id="signup_phone" class="form-control" placeholder="Phone Number" required="required"/>
+            </div>
+        </xpath>
+    </template>
+
+</odoo>
